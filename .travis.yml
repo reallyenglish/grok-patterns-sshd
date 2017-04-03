@@ -1,6 +1,10 @@
 language: ruby
 rvm:
-    - "2.2"
+- '2.2'
 script:
-    - bundle exec rake test
+- bundle exec rake test
 sudo: false
+notifications:
+  hipchat:
+    rooms:
+      secure: DaUeGmyhJ172+IJhNcBtkiHCYVlEBn2uBhKOewek4RwN9rMcTKjzOVC5SYpxoX2UPmJASpZgWYerIpIVObXVsLBdl/xpRz2lMiLV3Ew1Ix9HwMWsmcaTBsf83ALfeclrs2iDqbuBx8XzgukPZwSG8cAknPlfRrDxec/vinEWvxhv3AM6C8hgcvsn2mkhXJe5L3RWMt8oEJiU4RBrhMdUGtopm4tw8H+ISOKe8M09SctmNk/xQxjmCnsUEEXB2exNUfb2m0hVsMvIY8SOMSTqs6OBH1sNRXwem6uNOImFvvhXz/pOgw7wQF2atkU9RwubnTddL0UgLUJrDIFI205yS1IHy8ymzNwwKsrcXItMER3lHgZEtOwMN4bgilMCQkAzSp/7SO5r1g3CGIVBkblymgW7kwNQXLcAMNKB5oc1Rn542J3KZe423v9NLx/ybsva1j+5bWetwWZ6xWaMJAKgykPMbjAbRqoBcNokFqmjMQJKitwdxAUHJnbwkkmj0ZxvxlkH+k4Xukzmg5eLf+/bkDeFK2ddZJFudlaQy3j5dPbeddIQWsA/iRdBpvoDtpUIUZfB+bBz+lKGArXNvA1XWfloh6/E0m2Ph/kE1Zk+o9mrTOudOWVuNif1/RPB9/tC/SuKVE1VWS8FrtAYH0U66zTp/pKJtxrQsudun3D9gR8=
