@@ -4,5 +4,5 @@ rvm:
 before_script: 
     - gem install jls-grok
 script:
-    - ruby test/test.rb
+    - rake test
 sudo: false
