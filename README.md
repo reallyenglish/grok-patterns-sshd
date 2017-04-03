@@ -19,7 +19,7 @@ Table of Contents
 ```sh
 git clone git@github.com:reallyenglish/grok-patterns-sshd.git
 cd grok-patterns-sshd
-bundle install
+bundle install --path vendor/bundle
 git submodule update --init --recursive
 ```
 
