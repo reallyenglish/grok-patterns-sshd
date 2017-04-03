@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    cabin (0.9.0)
+    jls-grok (0.11.4)
+      cabin (>= 0.6.0)
+    rake (12.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  jls-grok (~> 0.11.4)
+  rake (~> 12.0.0)
+
+BUNDLED WITH
+   1.14.6

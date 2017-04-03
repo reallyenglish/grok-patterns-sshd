@@ -1,0 +1,8 @@
+pattern: ^%{SSHD_LOGIN}
+data: "Accepted publickey for foo from 192.168.1.1 port 38050 ssh2"
+results:
+  sshd_login_auth_method: publickey
+  sshd_login_user: foo
+  sshd_login_ip: 192.168.1.1
+  sshd_login_port: 38050
+  sshd_login_proto: ssh2

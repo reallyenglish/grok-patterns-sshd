@@ -1,0 +1,5 @@
+pattern: ^%{SSHD_INVALID_LOGIN}$
+data: "Invalid user foo from 88.149.200.205"
+results:
+  sshd_invalid_login_user: foo
+  sshd_invalid_login_ip: 88.149.200.205

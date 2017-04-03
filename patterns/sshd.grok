@@ -1,0 +1,4 @@
+SSHD_INVALID_LOGIN Invalid user %{WORD:sshd_invalid_login_user} from %{IP:sshd_invalid_login_ip}
+SSHD_LOGIN Accepted %{WORD:sshd_login_auth_method} for %{WORD:sshd_login_user} from %{IP:sshd_login_ip} port %{NUMBER:sshd_login_port} %{WORD:sshd_login_proto}
+
+SSHD %{SSHD_INVALID_LOGIN}|%{SSHD_LOGIN}
