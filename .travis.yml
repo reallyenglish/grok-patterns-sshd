@@ -2,7 +2,8 @@ language: ruby
 rvm:
 - '2.2'
 script:
-- bundle exec rake test
+  - bundle exec rake test
+  - no_such_command
 sudo: false
 notifications:
   hipchat:
