@@ -33,7 +33,7 @@ git submodule update --init --recursive
 ### Creating a test for the pattern
 
 ```sh
-vim test/test.rb
+vim test/sshd_${TEST_NUMBER}.yaml
 ```
 
 The test file is a YAML file. `pattern` is the pattern name to test, `data` is
