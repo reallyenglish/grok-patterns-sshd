@@ -1,0 +1,6 @@
+pattern: ^%{SSHD}$
+data: "Received disconnect from 192.168.1.1: 11: Bye Bye [preauth]"
+results:
+  sshd_message: Received disconnect
+  sshd_client_ip: 192.168.1.1
+  sshd_reason: Bye Bye

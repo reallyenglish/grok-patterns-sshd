@@ -1,0 +1,5 @@
+pattern: ^%{SSHD}$
+data: "error: connect_to 0.0.0.0 port 80: failed."
+results:
+  sshd_message: "error: connect_to"
+  sshd_reason: "0.0.0.0 port 80: failed."

@@ -1,0 +1,5 @@
+pattern: ^%{SSHD}$
+data: "error: connect_to brm18: unknown host (no address associated with name)"
+results:
+  sshd_message: "error: connect_to"
+  sshd_reason: "brm18: unknown host (no address associated with name)"

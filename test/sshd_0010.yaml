@@ -1,0 +1,5 @@
+pattern: ^%{SSHD}$
+data: "fatal: Read from socket failed: Connection reset by peer [preauth]"
+results:
+  sshd_message: "fatal: Read from socket failed"
+  sshd_reason: "Connection reset by peer [preauth]"
