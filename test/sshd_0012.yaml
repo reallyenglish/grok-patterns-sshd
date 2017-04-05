@@ -1,0 +1,5 @@
+pattern: ^%{SSHD}$
+data: "input_userauth_request: invalid user www.gulfdealz.ae [preauth]"
+results:
+  sshd_message: "input_userauth_request: invalid user"
+  sshd_invalid_login_user: www.gulfdealz.ae

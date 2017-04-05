@@ -1,0 +1,5 @@
+pattern: ^%{SSHD}$
+data: "fatal: Timeout before authentication for 192.168.1.1"
+results:
+  sshd_message: "fatal: Timeout before authentication"
+  sshd_client_ip: 192.168.1.1

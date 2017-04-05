@@ -1,0 +1,5 @@
+pattern: ^%{SSHD}$
+data: "Timeout, client not responding."
+results:
+  sshd_message: Timeout
+  sshd_reason: client not responding.

@@ -1,0 +1,6 @@
+pattern: ^%{SSHD}$
+data: "Connection closed by 0.0.0.0 [preauth]"
+results:
+  sshd_client_ip: 0.0.0.0
+  sshd_message: Connection closed by
+

@@ -1,4 +1,32 @@
-SSHD_INVALID_LOGIN Invalid user %{WORD:sshd_invalid_login_user} from %{IP:sshd_invalid_login_ip}
-SSHD_LOGIN Accepted %{WORD:sshd_login_auth_method} for %{WORD:sshd_login_user} from %{IP:sshd_login_ip} port %{NUMBER:sshd_login_port} %{WORD:sshd_login_proto}
+SSHD_MESSAGE_INVALID_USER Invalid user
+SSHD_MESSAGE_INVALID_USER2 input_userauth_request: invalid user
+SSHD_MESSAGE_ACCEPTED Accepted
+SSHD_MESSAGE_BAD_PROTOCOL Bad protocol version identification
+SSHD_MESSAGE_CONNECTION_CLOSED Connection closed by
+SSHD_MESSAGE_DID_NOT_RECEIVE_ID Did not receive identification string from
+SSHD_MESSAGE_TOO_MANY_AUTHENTICATION_FAILURES Too many authentication failures
+SSHD_MESSAGE_ERROR_CONNECT error: connect_to
+SSHD_MESSAGE_FATAL_READ_FROM_SOCKET_FAILED fatal: Read from socket failed
+SSHD_MESSAGE_FATAL_TIMEOUT_BEFORE_AUTHENTICATION fatal: Timeout before authentication
+SSHD_MESSAGE_RECEIVED_DISCONNECT Received disconnect
+SSHD_MESSAGE_TIMEOUT Timeout
 
-SSHD %{SSHD_INVALID_LOGIN}|%{SSHD_LOGIN}
+SSHD_ERROR_INVALID_LOGIN %{SSHD_MESSAGE_INVALID_USER:sshd_message} %{NOTSPACE:sshd_invalid_login_user} from %{IP:sshd_client_ip}
+SSHD_ERROR_INVALID_LOGIN2 %{SSHD_MESSAGE_INVALID_USER2:sshd_message} %{NOTSPACE:sshd_invalid_login_user} \[preauth\]
+SSHD_ERROR_BAD_PROTOCOL %{SSHD_MESSAGE_BAD_PROTOCOL:sshd_message} '%{GREEDYDATA:sshd_error_bad_protocol_name}' from %{IP:sshd_client_ip}
+SSHD_ERROR_TOO_MANY_AUTHENTICATION_FAILURES Disconnecting: %{SSHD_MESSAGE_TOO_MANY_AUTHENTICATION_FAILURES:sshd_message} for %{WORD:sshd_too_many_authentication_failures_user} \[preauth\]
+SSHD_ERROR_CONNECT_TO %{SSHD_MESSAGE_ERROR_CONNECT:sshd_message} %{GREEDYDATA:sshd_reason}
+SSHD_ERROR_FATAL_READ_FROM_SOCKET_FAILED %{SSHD_MESSAGE_FATAL_READ_FROM_SOCKET_FAILED:sshd_message}: %{GREEDYDATA:sshd_reason}
+SSHD_FATAL_TIMEOUT_BEFORE_AUTHENTICATION %{SSHD_MESSAGE_FATAL_TIMEOUT_BEFORE_AUTHENTICATION:sshd_message} for %{IP:sshd_client_ip}
+
+SSHD_ERROR %{SSHD_ERROR_BAD_PROTOCOL}|%{SSHD_ERROR_INVALID_LOGIN}|%{SSHD_ERROR_TOO_MANY_AUTHENTICATION_FAILURES}|%{SSHD_ERROR_CONNECT_TO}|%{SSHD_ERROR_FATAL_READ_FROM_SOCKET_FAILED}|%{SSHD_FATAL_TIMEOUT_BEFORE_AUTHENTICATION}|%{SSHD_ERROR_INVALID_LOGIN2}
+
+SSHD_INFO_LOGIN %{SSHD_MESSAGE_ACCEPTED:sshd_message} %{WORD:sshd_login_auth_method} for %{WORD:sshd_login_user} from %{IP:sshd_client_ip} port %{NUMBER:sshd_login_port} %{WORD:sshd_login_proto}
+SSHD_INFO_CONNECTION_CLOSED %{SSHD_MESSAGE_CONNECTION_CLOSED:sshd_message} %{IP:sshd_client_ip} \[preauth\]
+SSHD_INFO_DID_NOT_RECEIVE_ID %{SSHD_MESSAGE_DID_NOT_RECEIVE_ID:sshd_message} %{IP:sshd_client_ip}
+SSHD_INFO_RECIEVED_DISCONNECT %{SSHD_MESSAGE_RECEIVED_DISCONNECT:sshd_message} from %{IP:sshd_client_ip}: %{INT}: %{DATA:sshd_reason}(?: \[preauth\])?
+SSHD_INFO_TIMEOUT %{SSHD_MESSAGE_TIMEOUT:sshd_message}, %{GREEDYDATA:sshd_reason}
+
+SSHD_INFO %{SSHD_INFO_CONNECTION_CLOSED}|%{SSHD_INFO_DID_NOT_RECEIVE_ID}|%{SSHD_INFO_LOGIN}|%{SSHD_INFO_RECIEVED_DISCONNECT}|%{SSHD_INFO_TIMEOUT}
+
+SSHD %{SSHD_INFO}|%{SSHD_ERROR}

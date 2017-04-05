@@ -1,0 +1,5 @@
+pattern: ^%{SSHD}
+data: "Disconnecting: Too many authentication failures for admin1 [preauth]"
+results:
+  sshd_message: Too many authentication failures
+  sshd_too_many_authentication_failures_user: admin1
